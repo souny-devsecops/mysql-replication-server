@@ -59,4 +59,3 @@ Look for the "Slave_IO_Running" and "Slave_SQL_Running" fields. If both are set 
 
 ### Step 3 - Reset the master
         RESET MASTER;
-# mysql-replication-server
