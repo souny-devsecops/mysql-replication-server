@@ -7,3 +7,10 @@ SHOW MASTER STATUS;
 # Run on Slave
 CHANGE MASTER TO MASTER_HOST='10.150.1.85',MASTER_USER='souny_slave',MASTER_PASSWORD='souny007',MASTER_LOG_FILE='1.000003',MASTER_LOG_POS=3331,MASTER_PORT=3307; START SLAVE;
 SHOW SLAVE STATUS;
+
+
+
+# Create user for slave on read only permission
+CREATE USER 'user-read-only'@'%' IDENTIFIED BY 'password';
+GRANT SELECT ON db_demo.* TO 'user-read-only'@'%';
+FLUSH PRIVILEGES;
